@@ -4,10 +4,12 @@ import figlet from "figlet"
 
 import greet from "./greet.js"
 
-let msg1 = chalk.bgGreen.black(greet('Xola'))
+let res = greet('Xola')
 
-console.log(msg1)
+// print out black text on green background
+console.log(chalk.bgGreen.black(res))
 
+// create a figure
 console.log(figlet(greet("Lukhanyo"), function(err, data) {
     if (err) {
         console.log('Something went wrong...');
@@ -15,3 +17,8 @@ console.log(figlet(greet("Lukhanyo"), function(err, data) {
     }
     console.log(data)
 }))
+
+// create a 3D figure and style it
+console.log(chalk.red(
+    figlet.textSync("Hello World!", {'font':'3-D'})
+))
